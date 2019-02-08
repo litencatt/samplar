@@ -41,7 +41,7 @@ module Samplar
     end
 
     def passing_args
-      yaml[params[:client]][params[:method].to_s]["args"]
+      yaml[params[:client]][params[:method].to_s]&.keys
     end
 
     def new_args
