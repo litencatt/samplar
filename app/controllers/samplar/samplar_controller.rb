@@ -14,7 +14,11 @@ module Samplar
     end
 
     def create
-      @result = client.send(params[:method].to_sym, *passing_args)
+      if passing_args
+        @result = client.send(params[:method].to_sym, *array_params)
+      else
+        @result = client.send(params[:method].to_sym)
+      end
 
       render :result
     end
@@ -34,16 +38,16 @@ module Samplar
       end
     end
 
-    def yaml
-      YAML.load_file('./config/samplar.yml')
-    end
-
     def passing_args
       yaml[params[:client]][params[:method].to_s]
     end
 
-    def new_args
-      yaml[params[:client]][:new]["args"]
+    def array_params
+      passing_args.map{|arg| create_params[arg.to_sym]}
+    end
+
+    def yaml
+      YAML.load_file('./config/samplar.yml')
     end
 
     def create_params
