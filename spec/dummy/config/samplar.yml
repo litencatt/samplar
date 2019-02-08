@@ -1,0 +1,16 @@
+client:
+    foo:
+      args:
+    bar:
+      args:
+        - arg1
+        - arg2
+api_client:
+    foo:
+      args:
+api_client-layer1:
+    foo:
+      args:
+api_client-layer1-layer2:
+    foo:
+      args:

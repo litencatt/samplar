@@ -1,0 +1,8 @@
+= form_tag "/samplar/#{@client_name}/#{@method_name}" do
+  - if @pass_args
+    - @pass_args.each do |arg|
+      = label :args, arg
+      = text_field :args, arg
+      br
+
+  = submit_tag 'execute'
