@@ -1,8 +1,5 @@
 - @clients.keys.each do |client|
-  - if client.include?('-')
-    h3 #{client.split('-').map(&:classify).join('::').constantize}
-  - else
-    h3 #{client.classify.constantize}
+  h3 #{classified_name(client)}
 
   - @clients[client].keys.each do |method|
     = link_to method, "/samplar/#{client}/#{method}"
