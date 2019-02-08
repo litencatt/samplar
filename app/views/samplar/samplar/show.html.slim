@@ -1,8 +1,19 @@
-= form_tag "/samplar/#{@client_name}/#{@method_name}" do
-  - if @pass_args
-    - @pass_args.each do |arg|
-      = label :args, arg
-      = text_field :args, arg
-      br
+- if @class_method
+  h3 #{classified_name(@client_name)}.#{@method_name}
+  = form_tag "/samplar/#{@client_name}/#{@method_name}/self" do
+    - if @pass_args
+      - @pass_args.each do |arg|
+        = label :args, arg
+        = text_field :args, arg
+        br
+    = submit_tag 'execute'
 
-  = submit_tag 'execute'
+- else
+  h3 #{classified_name(@client_name)}##{@method_name}
+  = form_tag "/samplar/#{@client_name}/#{@method_name}" do
+    - if @pass_args
+      - @pass_args.each do |arg|
+        = label :args, arg
+        = text_field :args, arg
+        br
+    = submit_tag 'execute'

@@ -10,6 +10,7 @@ module Samplar
       @pass_args   = passing_args
       @client_name = params[:client]
       @method_name = params[:method]
+      @class_method = params[:self]
     end
 
     def create
@@ -21,6 +22,10 @@ module Samplar
     private
 
     def client
+      request.referer.include?('self') ? client_class : client_class.new
+    end
+
+    def client_class
       case
       when params[:client].include?('-')
         params[:client].split('-').map(&:classify).join('::').constantize
