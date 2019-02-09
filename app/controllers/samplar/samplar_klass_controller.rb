@@ -20,27 +20,6 @@ module Samplar
 
     private
 
-    def client_class
-      case
-      when params[:client].include?('-')
-        params[:client].split('-').map(&:classify).join('::').constantize
-      else
-        params[:client].classify.constantize
-      end
-    end
-
-    def passing_args
-      yaml[params[:client]][params[:method].to_s]
-    end
-
-    def array_params
-      passing_args.map{|arg| create_params[arg.to_sym]}
-    end
-
-    def yaml
-      YAML.load_file("#{Rails.root}/config/samplar.yml")
-    end
-
     def create_params
       params.require(:args)
     end
