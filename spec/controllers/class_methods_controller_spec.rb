@@ -1,4 +1,4 @@
-describe Samplar::SamplarKlassController, type: :controller do
+describe Samplar::ClassMethodsController, type: :controller do
   routes { Samplar::Engine.routes }
 
   describe "POST /samplar/:client/self/:method" do
