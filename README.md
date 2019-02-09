@@ -46,10 +46,10 @@ client:
 
 Run rails server
 ```
-$ bundle ecec rails s
+$ bundle exec rails s
 ```
 
-And then access to 'localhost:3000/samplar'
+And then access to http://localhost:3000/samplar
 
 ## About LICENSE
 This project rocks and uses MIT-LICENSE.
