@@ -26,7 +26,7 @@ module Samplar
     private
 
     def client
-      request.referer.include?('self') ? client_class : client_class.new
+      request.referer&.include?('self') ? client_class : client_class.new
     end
 
     def client_class

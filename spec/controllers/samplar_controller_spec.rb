@@ -13,4 +13,12 @@ describe Samplar::SamplarController, type: :controller do
 
     it { expect(response).to have_http_status(200) }
   end
+
+  describe "POST /samplar/:client/:method" do
+    before do
+      post :create, { client: 'client', method: 'foo' }
+    end
+
+    it { expect(response).to have_http_status(200) }
+  end
 end
