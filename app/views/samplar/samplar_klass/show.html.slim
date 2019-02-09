@@ -1,6 +1,6 @@
-h3 Samplar
-h3 #{classified_name(@client_name)}##{@method_name}
-= form_tag "/samplar/#{@client_name}/#{@method_name}" do
+h3 SamplarKlass
+h3 #{classified_name(@client_name)}.#{@method_name}
+= form_tag "/samplar/#{@client_name}/self/#{@method_name}" do
   - if @pass_args
     - @pass_args.each do |arg|
       = label :args, arg

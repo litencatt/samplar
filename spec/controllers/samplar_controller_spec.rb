@@ -20,5 +20,6 @@ describe Samplar::SamplarController, type: :controller do
     end
 
     it { expect(response).to have_http_status(200) }
+    it { expect(assigns(:result)).to eq Client.new.foo }
   end
 end
