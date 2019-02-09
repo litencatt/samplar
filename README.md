@@ -1,6 +1,6 @@
 # Samplar
-Samplar is mountable engine for Rails.
-Generate API clients tester page.
+Samplar is mountable engine for Rails. Generates API clients tester page.  
+Recommend only development env.
 
 [![CircleCI](https://circleci.com/gh/litencatt/samplar.svg?style=svg)](https://circleci.com/gh/litencatt/samplar)
 
