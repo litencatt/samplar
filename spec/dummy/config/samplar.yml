@@ -8,12 +8,28 @@ client:
     bar:
       - arg1
       - arg2
+
 api_client:
+  foo:
+  bar:
+    - arg1
+    - arg2
   self:
     foo:
+    bar:
+      - arg1
+      - arg2
+
 api_client-layer1:
   self:
     foo:
+    bar:
+      - arg1
+      - arg2
+
 api_client-layer1-layer2:
   self:
     foo:
+    bar:
+      - arg1
+      - arg2
