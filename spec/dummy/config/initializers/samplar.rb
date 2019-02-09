@@ -1,10 +1,17 @@
 class Client
   def foo
-    "instance method foo"
+    [
+      "#{self.class.to_s}.new.foo",
+      "#=> execute instance method foo"
+    ].join("\n")
+
   end
 
   def bar(arg1, arg2)
-    "instance method bar(#{arg1}, #{arg2})"
+    [
+      "#{self.class.to_s}.new.bar(#{arg1}, #{arg2})",
+      "#=> execute instance method bar(#{arg1}, #{arg2})"
+    ].join("\n")
   end
 
   def self.foo
@@ -12,7 +19,7 @@ class Client
   end
 
   def self.bar(arg1, arg2)
-    "#{self.to_s}(#{arg1}, #{arg2})"
+    "#{self.to_s}.bar(#{arg1}, #{arg2})"
   end
 end
 
