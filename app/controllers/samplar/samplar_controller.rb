@@ -47,7 +47,7 @@ module Samplar
     end
 
     def yaml
-      YAML.load_file('./config/samplar.yml')
+      YAML.load_file("#{Rails.root}/config/samplar.yml")
     end
 
     def create_params

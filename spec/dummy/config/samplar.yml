@@ -1,16 +1,19 @@
 client:
+  foo:
+  bar:
+    - arg1
+    - arg2
+  self:
     foo:
-      args:
     bar:
-      args:
-        - arg1
-        - arg2
+      - arg1
+      - arg2
 api_client:
+  self:
     foo:
-      args:
 api_client-layer1:
+  self:
     foo:
-      args:
 api_client-layer1-layer2:
+  self:
     foo:
-      args:
