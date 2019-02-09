@@ -20,6 +20,10 @@ module Samplar
 
     private
 
+    def passing_args
+      yaml[params[:client]]['self'][params[:method].to_s]
+    end
+
     def create_params
       params.require(:args)
     end
