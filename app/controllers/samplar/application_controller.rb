@@ -22,7 +22,13 @@ module Samplar
     end
 
     def array_params
-      passing_args.map{|arg| create_params[arg.to_sym]}
+      passing_args.each do |arg|
+        if create_params[arg].is_a?(Hash)
+          create_params[arg].symbolize_keys
+        else
+          create_params[arg.to_sym]
+        end
+      end
     end
   end
 end

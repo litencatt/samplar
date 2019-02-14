@@ -3,7 +3,17 @@ h3 #{classified_name(@client_name)}.#{@method_name}
 = form_tag "/samplar/#{@client_name}/self/#{@method_name}" do
   - if @pass_args
     - @pass_args.each do |arg|
-      = label :args, arg
-      = text_field :args, arg
-      br
+      - if arg.is_a?(Hash)
+        - arg.keys.each do |key|
+          | #{key}
+          br
+          - arg[key].each do |param|
+            = label "args[#{key}]".to_sym, param
+            = text_field "args[#{key}]".to_sym, param
+            br
+        br
+      - else
+        = label :args, arg
+        = text_field :args, arg
+        br
   = submit_tag 'execute'
