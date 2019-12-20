@@ -1,5 +1,5 @@
 h3 ClassMethods
-h3 #{classified_name(@client_name)}.#{@method_name}
+h3 #{@client_name}.#{@method_name}
 = form_tag "/samplar/#{@client_name}/self/#{@method_name}" do
   - if @pass_args
     - @pass_args.each do |arg|
