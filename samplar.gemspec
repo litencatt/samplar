@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.test_files = Dir["spec/**/*"]
 
   if RUBY_VERSION[0..2] < "2.5"
-    s.add_dependency "rails", "~> 4.2.11.1"
+    s.add_dependency "rails", "~> 4.2.11.1", "< 6.1.0"
     s.add_dependency 'sprockets-rails', '~> 3'
   else
     s.add_dependency "rails"
