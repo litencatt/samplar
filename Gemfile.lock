@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    samplar (0.0.1)
-      rails (~> 4.2.11.1)
+    samplar (0.1.0)
+      rails (~> 4.2.11.1, < 6.1.0)
       sprockets-rails (~> 3)
 
 GEM
