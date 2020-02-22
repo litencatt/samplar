@@ -1,12 +1,12 @@
 h3 Samplar
 - @clients.keys.each do |client|
-  h3 #{classified_name(client)}
+  h3 #{client}
 
   - @clients[client].keys.each do |method|
     - if method == 'self'
       - @clients[client]['self'].keys.each do |class_method|
-        = link_to "#{classified_name(client)}.#{class_method}", "/samplar/#{client}/self/#{class_method}"
+        = link_to "#{client}.#{class_method}", "/samplar/#{client}/self/#{class_method}"
         br
     - else
-      = link_to "#{classified_name(client)}##{method}", "/samplar/#{client}/#{method}"
+      = link_to "#{client}##{method}", "/samplar/#{client}/#{method}"
       br

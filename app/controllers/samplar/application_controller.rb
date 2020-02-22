@@ -22,7 +22,17 @@ module Samplar
     end
 
     def array_params
-      passing_args.map{|arg| create_params[arg.to_sym]}
+      passing_args.map do |arg|
+        if arg == 'options'
+          if key_value = create_params[arg.to_sym].split(':')
+            { key_value[0].to_sym => key_value[1] }
+          else
+            {}
+          end
+        else
+          create_params[arg.to_sym]
+        end
+      end
     end
   end
 end
