@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
 
   if RUBY_VERSION[0..2] < "2.5"
     s.add_dependency "rails", "~> 4.2.11.1", "< 6.1.0"
-    s.add_dependency 'sprockets-rails', '~> 3'
+    s.add_dependency 'sprockets-rails', '~> 2.3.3'
   else
     s.add_dependency "rails"
   end
